@@ -94,7 +94,7 @@
   background-color: var(--pink);
 } */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 830px) {
   .mainpart {
     padding: 100px 50px;
     margin: 50px auto;

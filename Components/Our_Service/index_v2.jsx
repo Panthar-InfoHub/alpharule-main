@@ -70,8 +70,8 @@ const Card = ({ item, index, isOpen, onToggle }) => {
     const [isHovered, setIsHovered] = useState(false)
     const containerRef = useRef(null)
     const mouse = {
-        x: useMotionValue(0),
-        y: useMotionValue(0)
+        x: useMotionValue('0'),
+        y: useMotionValue('0')
     }
 
     const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 }
@@ -86,6 +86,8 @@ const Card = ({ item, index, isOpen, onToggle }) => {
     }
 
     const manageMouseMove = e => {
+        // mouse.x.set(0)
+        // mouse.y.set(0);
         const { clientX, clientY } = e;
         mouse.x.set(clientX)
         mouse.y.set(clientY - 120);

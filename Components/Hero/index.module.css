@@ -1,7 +1,8 @@
-.hero_section{
+.hero_section {
   max-width: 100vw;
   overflow-x: hidden;
 }
+
 .hero_container {
   display: flex;
   justify-content: space-between;
@@ -199,7 +200,7 @@ Hero Animation Part End
   }
 }
 
-@media only screen and (max-width: 830px) {
+@media only screen and (max-width: 1024px) {
   .hero_container {
     padding-top: 110px;
     padding-bottom: 70px;
@@ -231,10 +232,21 @@ Hero Animation Part End
   }
 
   .Image_mobile {
+    height: 550px;
+  }
+
+  .Image_mobile img {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .Image_mobile {
     height: 250px;
   }
 
   .Image_mobile img {
     height: auto;
+    object-fit: contain;
   }
 }

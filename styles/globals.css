@@ -85,9 +85,12 @@ a:hover {
 /* Container */
 
 .container {
-  max-width: 80%;
+  width: 80% ;
   margin: 0 auto;
-  padding: 0 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  
 }
 
 

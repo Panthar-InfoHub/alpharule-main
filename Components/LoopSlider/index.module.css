@@ -120,7 +120,7 @@
   left: 11%;
 }
 
-@media only screen and (max-width: 830px) {
+@media only screen and (max-width: 1024px) {
   .word_div {
     padding: 5rem 2rem;
     gap: 2rem;
@@ -146,6 +146,13 @@
   .word_content {
     font-size: 2.5rem;
     padding: 0 12px 18px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .smart_div {
+    font-size: 3rem;
   }
 }
 
@@ -218,7 +225,7 @@
   }
 }
 
-@media only screen and (max-width: 830px) {
+@media only screen and (max-width: 1024px) {
   .slider {
     height: 100px;
 

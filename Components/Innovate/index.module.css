@@ -64,11 +64,11 @@
   margin: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
 
   .strive_section {
     position: relative;
-    margin: 180px auto;
+    margin: 120px auto;
   }
 
   .flex_div {
@@ -100,6 +100,11 @@
 
   .div_para {
     font-size: 0.75rem;
+  }
+
+  .text {
+    font-size: 18px;
+    line-height: 28px;
   }
 }
 
@@ -271,6 +276,30 @@
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .text_container {
+    font-size: 52px;
+  }
+
+  .imagestar {
+    border-radius: 5px;
+    width: 60px;
+    height: auto;
+  }
+
+  .servcetext {
+    font-size: 12px;
+    line-height: 12px;
+    right: 30px;
+    bottom: 0;
+  }
+
+  .innovatepart {
+    top: 0px;
+    left: -10px;
+  }
+}
+
 @media only screen and (min-width: 450px) and (max-width: 530px) {
   .text_container {
     font-size: 30px;
@@ -302,11 +331,5 @@
 
   .innovateupper {
     margin-bottom: 40px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .v2_text_container {
-    font-size: 70px;
   }
 }

@@ -1,18 +1,18 @@
 "use client"
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import Phone from "../../assets/image/Difference/phone.svg";
-import Frame from "../../assets/image/Difference/frame.svg";
-import Video from "../../assets/image/Difference/video.svg";
-import Mesh from "../../assets/image/Difference/bg.svg";
-import { bg_section, smart_div, image, innovate_section, word_div, word_content, video_image, wrapper, tempDiv, secondDiv, phoneContainer, wrapper_firstDiv, phone_video, phone_frame } from "./index.module.css";
-import LoopSlider from ".";
-import { motion, useScroll, useTransform } from "framer-motion"
 import { useEffect, useRef, useState } from "react";
+import LoopSlider from ".";
+import Mesh from "../../assets/image/Difference/bg.svg";
+import Frame from "../../assets/image/Difference/frame.svg";
+import Phone from "../../assets/image/Difference/phone.svg";
+import { bg_section, image, innovate_section, phone_frame, phone_video, phoneContainer, secondDiv, smart_div, tempDiv, video_image, word_content, word_div, wrapper, wrapper_firstDiv } from "./index.module.css";
 
 const Difference = () => {
 
     const parentRef = useRef(null);
     const [isMobile, setIsMobile] = useState(false);
+    const [isTab, setIsTab] = useState(false)
     const { scrollYProgress } = useScroll({
         target: parentRef,
         offset: ["start end", "end center"]
@@ -20,14 +20,21 @@ const Difference = () => {
 
     const fastY = useTransform(scrollYProgress, [0, 1], ["-20px", "360px"])
     const mobileFastY = useTransform(scrollYProgress, [0, 1], ["-80px", "90px"])
+    const tabFastY = useTransform(scrollYProgress, [0, 1], ["-80px", "40px"])
     const smallY = useTransform(scrollYProgress, [0, 1], ["-10px", "270px"])
     const mobileSmallY = useTransform(scrollYProgress, [0, 1], ["-30px", "120px"])
+    const tabSmallY = useTransform(scrollYProgress, [0, 1], ["-10px", "120px"])
 
     useEffect(() => {
         if (window.innerWidth <= 768) {
             setIsMobile(true);
         } else {
             setIsMobile(false);
+        }
+        if (window.innerWidth > 768 && window.innerWidth <= 1024) {
+            setIsTab(true);
+        } else {
+            setIsTab(false);
         }
     }, []);
 
@@ -40,16 +47,16 @@ const Difference = () => {
 
 
             <div className={word_div} ref={parentRef}  >
-                <motion.div style={{ y: isMobile ? mobileFastY : fastY }} className={wrapper_firstDiv} >
+                <motion.div style={{ y: isMobile ? mobileFastY : isTab ? tabFastY : fastY }} className={wrapper_firstDiv} >
                     <WordSeparate word="EXPERIENCE" />
                     <WordSeparate word="THE" />
                 </motion.div>
 
-                <motion.div style={{ y: isMobile ? mobileFastY : fastY }}  >
+                <motion.div style={{ y: isMobile ? mobileFastY : isTab ? tabFastY : fastY }} className={wrapper_firstDiv}  >
                     <WordSeparate word="DIFFERENCE" />
                 </motion.div>
 
-                <motion.div style={{ y: isMobile ? mobileSmallY : smallY }} className={smart_div} >
+                <motion.div style={{ y: isMobile ? mobileSmallY : isTab ? tabSmallY : smallY }} className={smart_div} >
                     <span> {`{`} </span>
                     <span> SMART </span>
                     <span> DEVELOPMENT </span>

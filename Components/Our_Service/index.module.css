@@ -256,6 +256,18 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .service_title_container_span {
+    font-size: 72px;
+    line-height: 1.5;
+  }
+
+  .green_div {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
 @media (max-width: 480px) {
   .scrollingBanner {
     font-size: 1.5rem;

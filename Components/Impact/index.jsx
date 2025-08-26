@@ -14,6 +14,7 @@ import Link from "next/link";
 
 const Impact = () => {
     const [isMobile, setIsMobile] = useState(false)
+    const [isTab, setIsTab] = useState(false)
 
     const getCursorContext = useContext(CursorContext);
 
@@ -32,6 +33,7 @@ const Impact = () => {
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth < 768)
+            setIsTab(window.innerWidth < 1024)
         }
         window.addEventListener("resize", handleResize)
         handleResize()
@@ -118,7 +120,7 @@ const Impact = () => {
                     </div>
                     <div className={style.img_flex_1} >
 
-                        {isMobile ? (
+                        {isMobile || isTab ? (
                             <div className={style.img_div}>
                                 <Image src={Image1} alt="image" />
                                 <Image src={Image2} alt="image" />
@@ -126,9 +128,9 @@ const Impact = () => {
                             </div>)
                             :
                             (<motion.div style={{ y: imageWrapperY }} className={style.img_div} >
-                                <Image src={Image1} alt="image" />
-                                <Image src={Image2} alt="image" />
-                                <Image src={Image3} alt="image" />
+                                <Image src={Image1} alt="image" className="object-contain" />
+                                <Image src={Image2} alt="image" className="object-contain" />
+                                <Image src={Image3} alt="image" className="object-contain" />
                             </motion.div>)}
                     </div>
 

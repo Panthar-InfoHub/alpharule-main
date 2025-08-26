@@ -51,6 +51,7 @@ const Hero = () => {
   const [isAutoSlide, setIsAutoSlide] = useState(true);
   const [timer, setTimer] = useState(INITIAL_TIMER);
   const [isMobile, setIsMobile] = useState(false);
+  const [isTab, setIsTab] = useState(false)
   const interval = useRef();
 
   useEffect(() => {
