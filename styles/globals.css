@@ -85,7 +85,7 @@ a:hover {
 /* Container */
 
 .container {
-  width: 80% ;
+  width: 85% !important;
   margin: 0 auto;
 }
 

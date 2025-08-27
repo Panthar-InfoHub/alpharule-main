@@ -335,6 +335,7 @@
     .text_black_container,
     .text_container {
         margin-left: 0;
-        font-size: 32px;
+        font-size: 48px;
+        line-height: 100%;
     }
 }
